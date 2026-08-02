@@ -35,3 +35,24 @@ src/
 ```
 
 Imports from `src` can use the `@` alias, for example `@/components`.
+
+## Design system
+
+Design tokens live in `src/styles/tokens.css` and generate Tailwind utilities for
+typography, colors, spacing, radius, shadows, and transitions. Semantic colors
+support light mode by default and dark mode through `data-theme="dark"` on the
+document root.
+
+Reusable composition utilities live in `src/styles/utilities.css`:
+
+- `page-container`
+- `section-block` and `section-block-sm`
+- `content-stack`
+- `heading-display` and `heading-section`
+- `body-copy`
+- `surface-card`
+- `focus-ring`
+- `interactive`
+
+Equivalent JavaScript values for Framer Motion and application logic are exported
+from `src/constants/theme.js`.

@@ -1,1 +1,60 @@
 @import "tailwindcss";
+@import "./tokens.css";
+@import "./utilities.css";
+
+:root {
+  color-scheme: light;
+  --theme-background: #ffffff;
+  --theme-foreground: #111827;
+  --theme-surface: #f8fafc;
+  --theme-surface-elevated: #ffffff;
+  --theme-muted: #64748b;
+  --theme-border: #e2e8f0;
+  --theme-accent: #4f46e5;
+  --theme-accent-hover: #4338ca;
+  --theme-accent-foreground: #ffffff;
+  --theme-focus: #6366f1;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --theme-background: #0b1120;
+  --theme-foreground: #f8fafc;
+  --theme-surface: #111827;
+  --theme-surface-elevated: #1e293b;
+  --theme-muted: #94a3b8;
+  --theme-border: #334155;
+  --theme-accent: #818cf8;
+  --theme-accent-hover: #a5b4fc;
+  --theme-accent-foreground: #0f172a;
+  --theme-focus: #a5b4fc;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--theme-background);
+  color: var(--theme-foreground);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--text-base--line-height);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--theme-accent) 24%, transparent);
+  color: var(--theme-foreground);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
