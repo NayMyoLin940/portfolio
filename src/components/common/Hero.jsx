@@ -20,7 +20,7 @@ function Hero() {
 
   return (
     <section
-      id="about"
+      id="hero"
       className="relative isolate overflow-hidden border-b border-border/70"
     >
       <div

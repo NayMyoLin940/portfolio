@@ -1,3 +1,5 @@
+export { default as About } from './common/About.jsx'
+export { default as AnimatedStat } from './ui/AnimatedStat.jsx'
 export { default as Footer } from './common/Footer.jsx'
 export { default as Hero } from './common/Hero.jsx'
 export { default as Navbar } from './common/Navbar.jsx'
