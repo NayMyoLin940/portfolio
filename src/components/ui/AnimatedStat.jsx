@@ -1,5 +1,6 @@
 import { animate, motion, useInView, useReducedMotion } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
+import { MOTION_EASE } from '@/constants'
 
 function AnimatedStat({ label, suffix = '', value }) {
   const ref = useRef(null)
@@ -17,7 +18,7 @@ function AnimatedStat({ label, suffix = '', value }) {
 
     const controls = animate(0, value, {
       duration: 1.2,
-      ease: [0.2, 0, 0, 1],
+      ease: MOTION_EASE,
       onUpdate: (latest) => setDisplayValue(Math.round(latest)),
     })
 
@@ -32,7 +33,7 @@ function AnimatedStat({ label, suffix = '', value }) {
       ref={ref}
       className="rounded-lg border border-border bg-background p-5 shadow-soft sm:p-6"
       initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
-      transition={{ duration: 0.45, ease: [0.2, 0, 0, 1] }}
+      transition={{ duration: 0.45, ease: MOTION_EASE }}
       viewport={{ amount: 0.5, once: true }}
       whileInView={{ opacity: 1, y: 0 }}
     >

@@ -1,1 +1,1 @@
-export {}
+export { getRevealProps } from './motion.js'

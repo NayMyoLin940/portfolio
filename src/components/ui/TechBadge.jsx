@@ -6,7 +6,7 @@ function TechBadge({ icon: Icon, label, className = '', delay = 0 }) {
   return (
     <motion.div
       animate={shouldReduceMotion ? undefined : { y: [0, -10, 0] }}
-      className={`absolute z-20 flex items-center gap-2 rounded-pill border border-white/60 bg-white/85 px-3 py-2 text-xs font-semibold text-slate-800 shadow-raised backdrop-blur-md sm:px-4 sm:py-2.5 sm:text-sm ${className}`}
+      className={`absolute z-20 flex items-center gap-2 rounded-pill border border-border/70 bg-background/85 px-3 py-2 text-xs font-semibold text-foreground shadow-raised backdrop-blur-md sm:px-4 sm:py-2.5 sm:text-sm ${className}`}
       transition={{
         delay,
         duration: 4,
@@ -14,7 +14,7 @@ function TechBadge({ icon: Icon, label, className = '', delay = 0 }) {
         repeat: Infinity,
       }}
     >
-      <Icon aria-hidden="true" className="text-base text-brand-600 sm:text-lg" />
+      <Icon aria-hidden="true" className="text-base text-accent sm:text-lg" />
       <span>{label}</span>
     </motion.div>
   )

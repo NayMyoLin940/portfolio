@@ -18,7 +18,7 @@ function ProjectAction({ children, href, icon: Icon }) {
 
   return (
     <a
-      className={`${className} border-border bg-background text-foreground hover:border-brand-300 hover:bg-brand-50 hover:text-brand-700`}
+      className={`${className} border-border bg-background text-foreground hover:border-brand-300 hover:bg-surface hover:text-accent`}
       href={href}
       rel="noreferrer"
       target="_blank"

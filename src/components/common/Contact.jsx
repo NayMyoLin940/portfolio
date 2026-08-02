@@ -1,4 +1,3 @@
-import { motion, useReducedMotion } from 'framer-motion'
 import {
   FiDownload,
   FiGithub,
@@ -7,6 +6,7 @@ import {
   FiMapPin,
 } from 'react-icons/fi'
 import ContactCard from '@/components/ui/ContactCard.jsx'
+import SectionHeader from '@/components/ui/SectionHeader.jsx'
 import { CONTACT_METHODS } from '@/data'
 
 const contactIcons = {
@@ -26,10 +26,9 @@ const cardLayout = {
 }
 
 function Contact() {
-  const shouldReduceMotion = useReducedMotion()
-
   return (
     <section
+      aria-labelledby="contact-title"
       id="contact"
       className="section-block relative isolate overflow-hidden border-b border-border bg-background"
     >
@@ -39,24 +38,13 @@ function Contact() {
       />
 
       <div className="page-container">
-        <motion.header
-          className="mx-auto max-w-3xl text-center"
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
-          transition={{ duration: 0.55, ease: [0.2, 0, 0, 1] }}
-          viewport={{ amount: 0.5, once: true }}
-          whileInView={{ opacity: 1, y: 0 }}
-        >
-          <p className="mb-4 text-xs font-semibold tracking-[0.16em] text-accent uppercase">
-            Get in touch
-          </p>
-          <h2 className="heading-section text-foreground">
-            Let&apos;s build something thoughtful together.
-          </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-body-lg text-muted">
-            Have a project, role, or collaboration in mind? Choose the channel
-            that works best for you.
-          </p>
-        </motion.header>
+        <SectionHeader
+          align="center"
+          description="Have a project, role, or collaboration in mind? Choose the channel that works best for you."
+          eyebrow="Get in touch"
+          headingId="contact-title"
+          title="Let's build something thoughtful together."
+        />
 
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-6">
           {CONTACT_METHODS.map((item, index) => (

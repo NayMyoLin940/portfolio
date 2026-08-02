@@ -1,4 +1,5 @@
-import { Footer, Navbar } from '@/components'
+import Footer from '@/components/common/Footer.jsx'
+import Navbar from '@/components/common/Navbar.jsx'
 
 function MainLayout({ children }) {
   return (

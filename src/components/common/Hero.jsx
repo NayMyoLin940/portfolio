@@ -8,10 +8,11 @@ import {
 } from 'react-icons/si'
 import profilePortrait from '@/assets/images/profile-portrait.jpg'
 import TechBadge from '@/components/ui/TechBadge.jsx'
+import { MOTION_EASE } from '@/constants'
 
 const entranceTransition = {
   duration: 0.65,
-  ease: [0.2, 0, 0, 1],
+  ease: MOTION_EASE,
 }
 
 function Hero() {
@@ -41,7 +42,7 @@ function Hero() {
         >
           <motion.p
             animate={{ opacity: 1, y: 0 }}
-            className="mb-5 inline-flex items-center gap-2 rounded-pill border border-brand-200 bg-brand-50/80 px-3 py-1.5 text-xs font-semibold tracking-[0.14em] text-brand-700 uppercase backdrop-blur-sm"
+            className="mb-5 inline-flex items-center gap-2 rounded-pill border border-brand-200 bg-brand-50/80 px-3 py-1.5 text-xs font-semibold tracking-[0.14em] text-brand-700 uppercase backdrop-blur-sm dark:border-brand-800 dark:bg-brand-950/70 dark:text-brand-200"
             initial={initial}
             transition={{ ...entranceTransition, delay: 0.05 }}
           >
@@ -106,9 +107,9 @@ function Hero() {
           />
 
           <motion.figure
-            className="relative mx-auto aspect-[4/5] max-w-[25rem] overflow-hidden rounded-[2rem] border border-white/60 bg-brand-950 shadow-floating ring-1 ring-brand-900/10"
+            className="relative mx-auto aspect-[4/5] max-w-[25rem] overflow-hidden rounded-[2rem] border border-border/70 bg-brand-950 shadow-floating ring-1 ring-brand-900/10"
             whileHover={shouldReduceMotion ? undefined : { y: -6 }}
-            transition={{ duration: 0.3, ease: [0.2, 0, 0, 1] }}
+            transition={{ duration: 0.3, ease: MOTION_EASE }}
           >
             <img
               alt="Stylized developer portrait placeholder"

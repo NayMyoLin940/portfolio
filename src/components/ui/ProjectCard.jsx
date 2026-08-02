@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { FiExternalLink, FiGithub } from 'react-icons/fi'
 import ProjectAction from '@/components/ui/ProjectAction.jsx'
+import { MOTION_EASE } from '@/constants'
 
 function ProjectCard({ project, index }) {
   const shouldReduceMotion = useReducedMotion()
@@ -12,7 +13,7 @@ function ProjectCard({ project, index }) {
       transition={{
         delay: index * 0.08,
         duration: 0.55,
-        ease: [0.2, 0, 0, 1],
+        ease: MOTION_EASE,
       }}
       viewport={{ amount: 0.2, once: true }}
       whileHover={shouldReduceMotion ? undefined : { y: -8 }}
@@ -25,7 +26,7 @@ function ProjectCard({ project, index }) {
           height="1024"
           loading="lazy"
           src={project.image}
-          transition={{ duration: 0.5, ease: [0.2, 0, 0, 1] }}
+          transition={{ duration: 0.5, ease: MOTION_EASE }}
           whileHover={shouldReduceMotion ? undefined : { scale: 1.04 }}
           width="1536"
         />
@@ -40,7 +41,7 @@ function ProjectCard({ project, index }) {
         <ul aria-label={`${project.title} technology stack`} className="mt-5 flex flex-wrap gap-2">
           {project.stack.map((technology) => (
             <li
-              className="rounded-pill border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700"
+              className="token-chip rounded-pill px-3 py-1 text-xs font-semibold"
               key={technology}
             >
               {technology}

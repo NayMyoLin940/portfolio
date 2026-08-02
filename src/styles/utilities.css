@@ -49,6 +49,17 @@
   box-shadow: var(--shadow-soft);
 }
 
+@utility accent-tile {
+  background: color-mix(in srgb, var(--theme-accent) 10%, var(--theme-background));
+  color: var(--theme-accent);
+}
+
+@utility token-chip {
+  border: 1px solid color-mix(in srgb, var(--theme-accent) 28%, transparent);
+  background: color-mix(in srgb, var(--theme-accent) 9%, var(--theme-background));
+  color: var(--theme-accent);
+}
+
 @utility focus-ring {
   outline: 2px solid transparent;
   outline-offset: 3px;

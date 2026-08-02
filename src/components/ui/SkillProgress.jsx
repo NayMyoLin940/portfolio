@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion'
+import { MOTION_EASE } from '@/constants'
 
 function SkillProgress({ level, name }) {
   const shouldReduceMotion = useReducedMotion()
@@ -11,7 +12,7 @@ function SkillProgress({ level, name }) {
           {level}%
         </span>
       </div>
-      <div className="h-2 overflow-hidden rounded-pill bg-brand-100">
+      <div className="h-2 overflow-hidden rounded-pill bg-brand-100 dark:bg-brand-950">
         <motion.div
           aria-label={`${name} proficiency`}
           aria-valuemax="100"
@@ -22,7 +23,7 @@ function SkillProgress({ level, name }) {
           role="progressbar"
           transition={{
             duration: shouldReduceMotion ? 0 : 0.9,
-            ease: [0.2, 0, 0, 1],
+            ease: MOTION_EASE,
           }}
           viewport={{ amount: 0.8, once: true }}
           whileInView={{ scaleX: level / 100 }}

@@ -1,24 +1,21 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { FiArrowDown, FiArrowUpRight } from 'react-icons/fi'
+import { getRevealProps } from '@/utils'
 
 function ContactCard({ className = '', icon: Icon, index, item }) {
   const shouldReduceMotion = useReducedMotion()
   const motionProps = {
-    initial: shouldReduceMotion ? false : { opacity: 0, y: 24 },
-    transition: {
+    ...getRevealProps(shouldReduceMotion, {
       delay: index * 0.06,
       duration: 0.5,
-      ease: [0.2, 0, 0, 1],
-    },
-    viewport: { amount: 0.35, once: true },
+    }),
     whileHover: shouldReduceMotion ? undefined : { y: -6 },
-    whileInView: { opacity: 1, y: 0 },
   }
 
   const content = (
     <>
       <div className="flex items-start justify-between gap-4">
-        <span className="grid size-12 place-items-center rounded-lg bg-brand-50 text-xl text-brand-700 transition-colors group-hover:bg-brand-100">
+        <span className="accent-tile grid size-12 place-items-center rounded-lg text-xl transition-transform group-hover:scale-105">
           <Icon aria-hidden="true" />
         </span>
         {item.href ? (
