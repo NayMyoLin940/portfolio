@@ -1,4 +1,4 @@
-import { About, Hero, Skills } from '@/components'
+import { About, Hero, Projects, Skills } from '@/components'
 import { MainLayout } from '@/layouts'
 
 function App() {
@@ -7,6 +7,7 @@ function App() {
       <Hero />
       <About />
       <Skills />
+      <Projects />
     </MainLayout>
   )
 }

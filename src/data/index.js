@@ -7,3 +7,4 @@ export {
 } from './about.js'
 
 export { SKILL_GROUPS } from './skills.js'
+export { FEATURED_PROJECTS } from './projects.js'
