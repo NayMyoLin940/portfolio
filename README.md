@@ -13,16 +13,25 @@ A React portfolio project initialized with Vite and Tailwind CSS.
 
 ```text
 src/
-├── assets/       Static assets imported by the application
-├── components/   Reusable UI components
-├── constants/    Shared constants
-├── context/      React context providers
-├── data/         Local application data
-├── hooks/        Reusable React hooks
-├── layouts/      Page layout components
-├── pages/        Route-level page components
-├── routes/       Route configuration
-├── services/     API and external service integrations
-├── styles/       Shared style files
-└── utils/        Utility functions
+├── app/                  Application root and app-level setup
+├── assets/
+│   ├── fonts/            Local font files
+│   ├── icons/            SVG and icon assets
+│   └── images/           Image assets
+├── components/
+│   ├── common/           Shared composed components
+│   └── ui/               Reusable UI primitives
+├── constants/            Shared constants
+├── context/              React context providers
+├── data/                 Local application data
+├── hooks/                Reusable React hooks
+├── layouts/              Page layout components
+├── pages/                Route-level page components
+├── routes/               Route definitions
+├── services/             API and external service integrations
+├── styles/               Global and shared styles
+├── utils/                Utility functions
+└── main.jsx              Application entry point
 ```
+
+Imports from `src` can use the `@` alias, for example `@/components`.
