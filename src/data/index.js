@@ -8,3 +8,4 @@ export {
 
 export { SKILL_GROUPS } from './skills.js'
 export { FEATURED_PROJECTS } from './projects.js'
+export { CONTACT_METHODS } from './contact.js'
