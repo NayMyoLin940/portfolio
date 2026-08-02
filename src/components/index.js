@@ -1,2 +1,4 @@
 export { default as Footer } from './common/Footer.jsx'
+export { default as Hero } from './common/Hero.jsx'
 export { default as Navbar } from './common/Navbar.jsx'
+export { default as TechBadge } from './ui/TechBadge.jsx'
