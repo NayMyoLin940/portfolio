@@ -5,3 +5,5 @@ export {
   CURRENT_LEARNING,
   EDUCATION,
 } from './about.js'
+
+export { SKILL_GROUPS } from './skills.js'
