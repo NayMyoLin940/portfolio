@@ -32,6 +32,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
@@ -51,6 +52,10 @@ body {
 ::selection {
   background: color-mix(in srgb, var(--theme-accent) 24%, transparent);
   color: var(--theme-foreground);
+}
+
+[id] {
+  scroll-margin-top: 5rem;
 }
 
 @media (prefers-reduced-motion: reduce) {

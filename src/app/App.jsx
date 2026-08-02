@@ -1,5 +1,7 @@
+import { MainLayout } from '@/layouts'
+
 function App() {
-  return null
+  return <MainLayout />
 }
 
 export default App

@@ -1,1 +1,1 @@
-export {}
+export { useScrolled } from './useScrolled.js'
