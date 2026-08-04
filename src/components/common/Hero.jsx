@@ -6,7 +6,7 @@ import {
   SiReact,
   SiTailwindcss,
 } from 'react-icons/si'
-import profilePortrait from '@/assets/images/profile-portrait.jpg'
+import profilePortrait from '@/assets/images/profile-portrait.png'
 import TechBadge from '@/components/ui/TechBadge.jsx'
 import { MOTION_EASE } from '@/constants'
 
@@ -36,7 +36,7 @@ function Hero() {
       <div className="page-container grid min-h-[calc(100svh-4rem)] items-center gap-14 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20 lg:py-20">
         <motion.div
           animate={{ opacity: 1, y: 0 }}
-          className="relative z-10 mx-auto max-w-2xl text-center lg:mx-0 lg:text-left"
+          className="relative z-10 max-w-2xl text-left"
           initial={initial}
           transition={entranceTransition}
         >
@@ -46,7 +46,15 @@ function Hero() {
             initial={initial}
             transition={{ ...entranceTransition, delay: 0.05 }}
           >
-            <span className="size-1.5 rounded-full bg-brand-500" />
+            <motion.span
+              animate={
+                shouldReduceMotion
+                  ? undefined
+                  : { opacity: [1, 0.6, 1], scale: [1, 1.55, 1] }
+              }
+              className="size-1.5 rounded-full bg-brand-500"
+              transition={{ duration: 1.4, ease: 'easeInOut', repeat: Infinity }}
+            />
             Full Stack Developer
           </motion.p>
 
@@ -65,14 +73,15 @@ function Hero() {
             initial={initial}
             transition={{ ...entranceTransition, delay: 0.19 }}
           >
-            I build thoughtful, reliable digital products from polished
-            interfaces to scalable back-end systems—turning complex ideas into
-            clear, useful experiences.
+            Passionate full-stack developer crafting modern web applications,
+            from intuitive interfaces to reliable back-end systems. As a
+            final-year Computer Science student, I&apos;m committed to building
+            scalable, maintainable, and user-focused digital products.
           </motion.p>
 
           <motion.div
             animate={{ opacity: 1, y: 0 }}
-            className="mt-9 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start"
+            className="mt-9 flex flex-col justify-start gap-3 sm:flex-row"
             initial={initial}
             transition={{ ...entranceTransition, delay: 0.26 }}
           >
@@ -112,7 +121,7 @@ function Hero() {
             transition={{ duration: 0.3, ease: MOTION_EASE }}
           >
             <img
-              alt="Stylized developer portrait placeholder"
+              alt="Portrait of Nay Myo Lin"
               className="h-full w-full object-cover"
               decoding="async"
               fetchPriority="high"
@@ -128,24 +137,28 @@ function Hero() {
 
           <TechBadge
             className="top-[9%] left-0 sm:left-2"
+            color="#61dafb"
             delay={0}
             icon={SiReact}
             label="React"
           />
           <TechBadge
             className="top-[27%] right-0 sm:right-1"
+            color="#339933"
             delay={0.8}
             icon={SiNodedotjs}
             label="Node.js"
           />
           <TechBadge
             className="bottom-[25%] left-0 sm:-left-1"
+            color="#f7df1e"
             delay={1.6}
             icon={SiJavascript}
             label="JavaScript"
           />
           <TechBadge
             className="right-0 bottom-[8%] sm:-right-1"
+            color="#06b6d4"
             delay={2.4}
             icon={SiTailwindcss}
             label="Tailwind"

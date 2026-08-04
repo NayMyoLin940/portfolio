@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion'
 
-function TechBadge({ icon: Icon, label, className = '', delay = 0 }) {
+function TechBadge({ icon: Icon, label, color, className = '', delay = 0 }) {
   const shouldReduceMotion = useReducedMotion()
 
   return (
@@ -14,7 +14,11 @@ function TechBadge({ icon: Icon, label, className = '', delay = 0 }) {
         repeat: Infinity,
       }}
     >
-      <Icon aria-hidden="true" className="text-base text-accent sm:text-lg" />
+      <Icon
+        aria-hidden="true"
+        className="text-base text-accent sm:text-lg"
+        style={color ? { color } : undefined}
+      />
       <span>{label}</span>
     </motion.div>
   )

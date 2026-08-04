@@ -1,12 +1,16 @@
 import { motion, useReducedMotion } from 'framer-motion'
-import { FiBookOpen, FiCompass, FiLayers, FiUser } from 'react-icons/fi'
-import profilePortrait from '@/assets/images/profile-portrait.jpg'
-import AnimatedStat from '@/components/ui/AnimatedStat.jsx'
+import {
+  FiBookOpen,
+  FiCompass,
+  FiLayers,
+  FiMapPin,
+  FiUser,
+} from 'react-icons/fi'
+import profilePortrait from '@/assets/images/profile-portrait.png'
 import SectionHeader from '@/components/ui/SectionHeader.jsx'
 import {
   ABOUT_INTRODUCTION,
   ABOUT_PROFILE,
-  ABOUT_STATS,
   CURRENT_LEARNING,
   EDUCATION,
 } from '@/data'
@@ -37,7 +41,7 @@ function About() {
           >
             <div className="flex items-center gap-4">
               <img
-                alt="Stylized developer portrait placeholder"
+                alt="Portrait of Nay Myo Lin"
                 className="size-20 rounded-xl object-cover shadow-soft"
                 height="160"
                 loading="lazy"
@@ -50,6 +54,10 @@ function About() {
                 </h3>
                 <p className="mt-1 text-body-sm font-medium text-accent">
                   {ABOUT_PROFILE.role}
+                </p>
+                <p className="mt-2 flex items-center gap-1.5 text-xs text-muted">
+                  <FiMapPin aria-hidden="true" />
+                  {ABOUT_PROFILE.location}
                 </p>
               </div>
             </div>
@@ -111,9 +119,11 @@ function About() {
                 <p className="mt-1 text-body-sm text-accent">
                   {EDUCATION.institution}
                 </p>
-                <p className="mt-4 text-body-sm text-muted">
-                  {EDUCATION.description}
-                </p>
+                {EDUCATION.description ? (
+                  <p className="mt-4 text-body-sm text-muted">
+                    {EDUCATION.description}
+                  </p>
+                ) : null}
               </motion.article>
 
               <motion.article
@@ -139,12 +149,6 @@ function About() {
               </motion.article>
             </div>
           </div>
-        </div>
-
-        <div className="mt-6 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
-          {ABOUT_STATS.map((stat) => (
-            <AnimatedStat key={stat.label} {...stat} />
-          ))}
         </div>
       </div>
     </section>

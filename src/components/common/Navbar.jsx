@@ -36,11 +36,11 @@ function Navbar() {
         className="page-container flex h-16 items-center justify-between sm:h-18"
       >
         <a
-          className="focus-ring interactive rounded-sm font-display text-sm font-bold tracking-[-0.02em] text-foreground hover:text-accent sm:text-base"
+          className="focus-ring interactive rounded-sm font-display text-lg font-bold tracking-[-0.03em] text-foreground hover:text-accent sm:text-xl"
           href="#top"
           onClick={closeMenu}
         >
-          Portfolio
+          Nay Myo Lin
         </a>
 
         <div className="flex items-center gap-2 sm:gap-4">

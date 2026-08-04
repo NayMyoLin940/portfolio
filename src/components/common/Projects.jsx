@@ -11,13 +11,13 @@ function Projects() {
     >
       <div className="page-container">
         <SectionHeader
-          description="A collection of full-stack concepts spanning hospitality, operations, and digital commerce."
-          eyebrow="Featured projects"
+          description="A real work in progress where I am applying responsive UI, state management, mapping, and product-flow thinking to a complete cafe ordering experience."
+          eyebrow="Current project"
           headingId="projects-title"
-          title="Selected work, built around real product needs."
+          title="Building Island Cafe, one thoughtful flow at a time."
         />
 
-        <div className="mt-12 grid items-stretch gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-12 grid max-w-4xl items-stretch gap-6">
           {FEATURED_PROJECTS.map((project, index) => (
             <ProjectCard index={index} key={project.title} project={project} />
           ))}

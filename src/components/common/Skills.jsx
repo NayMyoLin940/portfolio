@@ -1,7 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { FiCode, FiDatabase, FiServer, FiTool } from 'react-icons/fi'
 import SectionHeader from '@/components/ui/SectionHeader.jsx'
-import SkillProgress from '@/components/ui/SkillProgress.jsx'
+import SkillBadge from '@/components/ui/SkillBadge.jsx'
 import { SKILL_GROUPS } from '@/data'
 import { getRevealProps } from '@/utils'
 
@@ -24,10 +24,10 @@ function Skills() {
       <div className="page-container">
         <SectionHeader
           align="center"
-          description="From interface details to data architecture, each part of the stack is approached with clarity, performance, and maintainability in mind."
+          description="From responsive interfaces to reliable back-end services, I focus on writing clean, maintainable code while continuously improving my engineering skills."
           eyebrow="Technical skills"
           headingId="skills-title"
-          title="A balanced toolkit for modern products."
+          title="A growing toolkit for modern web applications."
         />
 
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:gap-6">
@@ -58,9 +58,9 @@ function Skills() {
                   </div>
                 </div>
 
-                <ul className="mt-7 grid gap-5">
+                <ul className="mt-7 grid gap-3 sm:grid-cols-2">
                   {group.skills.map((skill) => (
-                    <SkillProgress key={skill.name} {...skill} />
+                    <SkillBadge key={skill.name} {...skill} />
                   ))}
                 </ul>
               </motion.article>

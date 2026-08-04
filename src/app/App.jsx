@@ -6,6 +6,7 @@ import { MainLayout } from '@/layouts'
 const About = lazy(() => import('@/components/common/About.jsx'))
 const Skills = lazy(() => import('@/components/common/Skills.jsx'))
 const Projects = lazy(() => import('@/components/common/Projects.jsx'))
+const MilestoneTimeline = lazy(() => import('@/components/common/MilestoneTimeline.jsx'))
 const Contact = lazy(() => import('@/components/common/Contact.jsx'))
 
 function DeferredSection({ children, label }) {
@@ -24,6 +25,9 @@ function App() {
       </DeferredSection>
       <DeferredSection label="Projects">
         <Projects />
+      </DeferredSection>
+      <DeferredSection label="Milestone Timeline">
+        <MilestoneTimeline />
       </DeferredSection>
       <DeferredSection label="Contact">
         <Contact />
